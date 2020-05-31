@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  
+}
+
+/* Header/logo Title */
+.header {
+  padding: 15px;
+  text-align: center;
+  background: orange; //#1abc9c;
+  color: black;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* style of the page bottom */
+.botpag {
+  overflow: hidden;
+  background-color: #ffffff;
+  position: sticky;
+  position: -webkit-sticky;
+  text-align: center;
+  top: 0;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: inital-scale;
+  background-color: none;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* Position the "previous button" to the left */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: black;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: black;
+  padding: 10px 0;
+  height: 150px;
+}
+</style>
+</head>
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+	<div class="header">
+	  <h1>Flower</h1>
+	  <p>captured & cretated by NGUYEN Chi Thanh</p>
+	</div>
+
+	<div class="row">
+	  <div class="column">
+		<img class="demo cursor" src="photos/flower/IMG_3228_copy.jpg" alt="evil's tonge" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3237_copy.jpg" alt="dandelion" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3135_copy.jpg" alt="bloom in the dark" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_2839.jpg" alt="an unknow flower" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_0288.jpg" alt="so close, so dark" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_2895.jpg" alt="spring flower" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_2904_copy.jpg" alt="in the dark" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3116_copy.jpg" alt="little white" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3175.jpg" alt="be outstanding" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3176.jpg" alt="daisy" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+	  </div>
+	  <div class="column">		
+		<img class="demo cursor" src="photos/flower/IMG_3177_copy.jpg" alt="side by side until the end of time" style="width:100%" onclick="openModal();currentSlide(11)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3240.jpg" alt="wildflower" style="width:100%" onclick="openModal();currentSlide(12)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3242.jpg" alt="wildflower 2" style="width:100%" onclick="openModal();currentSlide(13)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3250.jpg" alt="wildflower 3" style="width:100%" onclick="openModal();currentSlide(14)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3274.jpg" alt="leaf" style="width:100%" onclick="openModal();currentSlide(15)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_0717_copy.jpg" alt="yellow" style="width:100%" onclick="openModal();currentSlide(16)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_1159_copy.jpg" alt="little red" style="width:100%" onclick="openModal();currentSlide(17)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_1239_copy.jpg" alt="stone heart" style="width:100%" onclick="openModal();currentSlide(18)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_1249_copy.jpg" alt="little darkness" style="width:100%" onclick="openModal();currentSlide(19)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_1945_copy.jpg" alt="tend to you" style="width:100%" onclick="openModal();currentSlide(20)" class="hover-shadow cursor">
+	  </div>
+	  <div class="column">
+		<img class="demo cursor" src="photos/flower/IMG_3544_copy.jpg" alt="garden of flowers" style="width:100%" onclick="openModal();currentSlide(21)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3558_copy.jpg" alt="poppy" style="width:100%" onclick="openModal();currentSlide(22)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3776_copy.jpg" alt="venereal" style="width:100%" onclick="openModal();currentSlide(23)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3794_copy.jpg" alt="naked" style="width:100%" onclick="openModal();currentSlide(24)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_0878_copy.jpg" alt="happy lonliness" style="width:100%" onclick="openModal();currentSlide(25)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_2158_copy.jpg" alt="blossom" style="width:100%" onclick="openModal();currentSlide(26)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3567_copy.jpg" alt="poppy and window" style="width:100%" onclick="openModal();currentSlide(27)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3706_copy.jpg" alt="the remaining part after rain" style="width:100%" onclick="openModal();currentSlide(28)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3861_copy.jpg" alt="a wild flower in forest" style="width:100%" onclick="openModal();currentSlide(29)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3868_copy.jpg" alt="the bustle of a tiny world" style="width:100%" onclick="openModal();currentSlide(30)" class="hover-shadow cursor">
+	  </div>
+	  <div class="column">
+		<img class="demo cursor" src="photos/flower/IMG_3878_copy.jpg" alt="a yellow leaf" style="width:100%" onclick="openModal();currentSlide(31)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3913_copy.jpg" alt="when he meet the ground" style="width:100%" onclick="openModal();currentSlide(32)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3929_copy.jpg" alt="waiting to catch" style="width:100%" onclick="openModal();currentSlide(33)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3944_copy.jpg" alt="when he got into the other side of age" style="width:100%" onclick="openModal();currentSlide(34)" class="hover-shadow cursor">
+		<img class="demo cursor" src="photos/flower/IMG_3946_copy.jpg" alt="a tiny Tiny" style="width:100%" onclick="openModal();currentSlide(35)" class="hover-shadow cursor">
+	  </div>
+	</div>
+
+	<div id="myModal" class="modal">
+	  <span class="close cursor" onclick="closeModal()">&times;</span>
+	  <div class="modal-content">
+
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3228_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3237_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3135_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_2839.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_0288.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_2895.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_2904_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3116_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3175.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3176.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3177_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3240.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3242.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3250.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3274.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_0717_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_1159_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_1239_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_1249_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_1945_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3544_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3558_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3776_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3794_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_0878_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_2158_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3567_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3706_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3861_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3868_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3878_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3913_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3929_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3944_copy.jpg" style="width:100%">
+		</div>
+		<div class="mySlides">
+		  <img src="photos/flower/IMG_3946_copy.jpg" style="width:100%">
+		</div>
+		
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+		<p id="caption"></p>
+	  </div>
+	</div>
+	
+</div>
+
+<script>
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Header/logo Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: black; //#1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+.videoDiv {
+    width: 50%; /*or whatever % you prefer*/
+    margin: 0 auto;
+    display: block;
+}
+.vidcap {
+  text-align: center;
+  padding: 32px;
+}
+</style>
+
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+	<div class="header">
+	  <h1>Videography</h1>
+	  <p>captured & cretated by NGUYEN Chi Thanh</p>
+	</div>
+	
+	<div class="videoDiv">
+		<p class="vidcap"> video 1 </p>
+		<video width="100%" controls>
+			<source src="videos/speedup_music_16x.mp4" type="video/mp4">
+		</video>
+	</div>
+	
+<script>
+var elem = document.getElementById("myvideo");
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+</script>
+</body>
+</html>
+
