@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  
+}
+
+/* Header/logo Title */
+.header {
+  padding: 15px;
+  text-align: center;
+  background: black; //#1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Left-aligned text in a centered block (mangles text in Adobe Digital Editions 1.7, so search an alternative if you need to support it) */
+.poem {
+	display: table;
+/*	margin-right: auto;
+	margin-left: auto;*/
+	text-align: left;
+}
+
+/* Indent wrapping lines */
+.stanza {
+  margin-left: 2em;
+}
+.verse {
+  margin-left: -2em;
+}
+.videoDiv {
+    width: 40%; /*or whatever % you prefer*/
+    margin: 0 auto;
+    display: block;
+}
+</style>
+</head>
+<body>
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+	<div class="header">
+	  <h1>Poetry</h1>
+	  <p>written by NGUYEN Chi Thanh</p>
+	</div>
+	
+	<div class="videoDiv">
+		<div class="poem">
+		<h2>AS A CLOUD</h2>
+		<p class="stanza">
+			<span class="verse">I wander as a cloud </span><br />
+			<span class="verse">Floating up on the sky </span><br />
+			<span class="verse">Rushing down to the gorge </span><br />
+			<span class="verse">The flowers there I see </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Waving me to come and touch</span><br />
+			<span class="verse">A yellow, a green and a red</span><br />
+			<span class="verse">A sun light pokes on petal</span><br />
+			<span class="verse">And here I go, running around the happiness.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Lifetime has gone </span><br />
+			<span class="verse">Yellow, green and red now just as grey</span><br />
+			<span class="verse">The sun is set instead of rise</span><br />
+			<span class="verse">and so I run, to down and up</span><br />
+			<span class="verse">Look for a flame, a flame of love </span><br />
+			<span class="verse">But it seems cold and so darkness</span><br />
+			<span class="verse">I wandered as a cloud.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>HURT</h2>
+		<p class="stanza">
+			<span class="verse">Life is suck and love is dump </span><br />
+			<span class="verse">Why would we do begging for a love? </span><br />
+			<span class="verse">You say it's love, and then you turns. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">If love is true, then why you cheat?</span><br />
+			<span class="verse">Is it a phase or blind of love?</span><br />
+			<span class="verse">Define the love, we must to go.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Oh my sweetheart, you better strong </span><br />
+			<span class="verse">The price you pay, it may worth it</span><br />
+			<span class="verse">Even it hurts, but hurt for heal.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>ANH ĐI RỒI CÒN MỖI EM</h2>
+		<p class="stanza">
+			<span class="verse">Bên trong làn sương mỏng </span><br />
+			<span class="verse">Có một chàng trai đang thì thầm khúc hát </span><br />
+			<span class="verse">Rằng ta đã bên nhau </span><br />
+			<span class="verse">Rằng ta đã thề hẹn </span><br />
+			<span class="verse">Một ngày như bao ngày</span><br />
+			<span class="verse">Anh vội vàng ra đi </span><br />
+			<span class="verse">Một câu hẹn ước cuối</span><br />
+			<span class="verse">Kiếp sau ta gặp nhau.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Anh đi rồi, còn mỗi em</span><br />
+			<span class="verse">Bơ vơ trong tìm thức </span><br />
+			<span class="verse">Em mơ một ngày</span><br />
+			<span class="verse">Một ngày ánh nắng đẹp</span><br />
+			<span class="verse">Lung linh, nụ hoa kia khẽ cười</span><br />
+			<span class="verse">Chiếc ghế cũ mòn xơ xác</span><br />
+			<span class="verse">Và đôi ta, chòm mây hờn màu tóc</span><br />
+			<span class="verse">Tay trong tay, ta đi hết đoạn đường đời.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Anh đi rồi, còn mỗi em</span><br />
+			<span class="verse">Đoạn đường kia bỗng thành cũ</span><br />
+			<span class="verse">Em thoi thóp từng nhịp thở </span><br />
+			<span class="verse">Em lê thê mỗi bước chân</span><br />
+			<span class="verse">Trên con đường quen thuộc</span><br />
+			<span class="verse">Em nhận ra một điều </span><br />
+			<span class="verse">Hoá ra em vẫn đây</span><br />
+			<span class="verse">Trên con đường quen thuộc</span><br />
+			<span class="verse">Chỉ thiếu một bàn tay.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Những tháng ngày xa xôi</span><br />
+			<span class="verse">Không còn anh dẫn lối</span><br />
+			<span class="verse">Màu nắng có vẫn vàng </span><br />
+			<span class="verse">Nụ hoa có còn xinh</span><br />
+			<span class="verse">Em một mình, em biết.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Từng dòng thơ, em viết </span><br />
+			<span class="verse">Kiếp sau ta gặp nhau</span><br />
+			<span class="verse">Em sẽ kể anh nghe</span><br />
+			<span class="verse">Rằng màu nắng vàng hanh </span><br />
+			<span class="verse">Rằng nụ hoa kia chết </span><br />
+			<span class="verse">Rằng đôi chim rời tổ </span><br />
+			<span class="verse">Rằng em đã thiếu anh bên đời </span><br />
+			<span class="verse">Anh đi rồi, còn mỗi em.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>Water hyacinth</h2>
+		<p class="stanza">
+			<span class="verse">I am just a poor wayfaring stranger </span><br />
+			<span class="verse">I wandered around as a water hyacinth </span><br />
+			<span class="verse">that floats in rivers and stormed by waves </span><br />
+			<span class="verse">dark clouds above, I saw my future. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">There is a place, it called by home</span><br />
+			<span class="verse">and all I see is peace and love</span><br />
+			<span class="verse">oh my childhood, since when you've gone</span><br />
+			<span class="verse">and here I am, a griefly version.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">The time has changed, the life forwards </span><br />
+			<span class="verse">surfing the waves, the home I'll reach</span><br />
+			<span class="verse">leaving behind all the sadness</span><br />
+			<span class="verse">a wayfaring stranger, I'm just going home.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>A silence night</h2>
+		<p class="stanza">
+			<span class="verse">The night seems too long </span><br />
+			<span class="verse">Empty, dark, cold as human </span><br />
+			<span class="verse">He wakes up at night </span><br />
+			<span class="verse">Enjoying the feel of loneliness. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">The wind seems lament beyond windows</span><br />
+			<span class="verse">That why is it so cold?</span><br />
+			<span class="verse">The oak tree angrily responds</span><br />
+			<span class="verse">That it's colder if you are the tree</span><br />
+			<span class="verse">Doesn't have any words and blows away</span><br />
+			<span class="verse">The wind is gone with a little sadness.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Far above from there</span><br />
+			<span class="verse">A weakly voice is whispering</span><br />
+			<span class="verse">What would be colder by being alone in space</span><br />
+			<span class="verse">You are cold by physically</span><br />
+			<span class="verse">But I am cold by mentally</span><br />
+			<span class="verse">You can see me, but it's not because I am shinning</span><br />
+			<span class="verse">Such a looser!</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">My dearest friends</span><br />
+			<span class="verse">Let's smile and stop whining</span><br />
+			<span class="verse">I wake up at night</span><br />
+			<span class="verse">Will you be friend with me?</span><br />
+			<span class="verse">Let's talk about the happiness</span><br />
+			<span class="verse">To fulfill the emptiness</span><br />
+			<span class="verse">Let's talk about the warming things</span><br />
+			<span class="verse">To step out the winter's cold</span><br />
+			<span class="verse">Let's talk about us</span><br />
+			<span class="verse">To pull away the loneliness</span><br />
+			<span class="verse">And let's talk about me</span><br />
+			<span class="verse">To remind you a poorly lonely death.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>ANH</h2>
+		<p class="stanza">
+			<span class="verse">Gió giật từng cơn ngoài kia cửa </span><br />
+			<span class="verse">Lòng ai mang đậm nét u hoài </span><br />
+			<span class="verse">Cô đơn khắc khoải chờ ai đó </span><br />
+			<span class="verse">Chẳng biết hình dung, dáng còn mờ. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Ngày mai anh đến, em hi vọng</span><br />
+			<span class="verse">Một chữ còn đây một chữ chờ</span><br />
+			<span class="verse">Đêm qua giông tố đời em lặng</span><br />
+			<span class="verse">Lặng lẽ niềm riêng, mắt lệ nhòa.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Em biết tình em anh không nhận</span><br />
+			<span class="verse">Bởi lẽ anh đâu thấu nỗi niềm</span><br />
+			<span class="verse">Một khác, hai khác, ba cũng khác</span><br />
+			<span class="verse">Đành thôi mong mỏi một ngày mai.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>A VOICE FROM THIS</h2>
+		<p class="stanza">
+			<span class="verse">The sun goes down, the bird comes home </span><br />
+			<span class="verse">But I am still here, in the shadow of the world </span><br />
+			<span class="verse">One song, one brain and one heart.  </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">There, the light from a charming place </span><br />
+			<span class="verse">Should I go there?</span><br />
+			<span class="verse">Dissolving to a hurry crowded</span><br />
+			<span class="verse">Or simply stand here, enjoy my beauty darkness.</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Oh, hey there the world!</span><br />
+			<span class="verse">Can you see the voice from this?</span><br />
+			<span class="verse">Wish you can, but sadly you're not</span><br />
+			<span class="verse">So then, keep standing, in shadow of the world</span><br />
+			<span class="verse">Waiting for next winter!</span><br />
+			<span class="verse">Oh hi there the world!</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>FOR MY FRIEND</h2>
+		<p class="stanza">
+			<span class="verse">the sun will rise, the morning comes </span><br />
+			<span class="verse">open the door, step out forward </span><br />
+			<span class="verse">the light’s out there, just come and take </span><br />
+			<span class="verse">yesterday is past, live this moment </span><br />
+			<span class="verse">happy we had and those was real</span><br />
+			<span class="verse">even it’s sad, because it's life…</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">but my dear old friend!</span><br />
+			<span class="verse">step straight forward, grab of the light</span><br />
+			<span class="verse">look back behind, smile to the past</span><br />
+			<span class="verse">that you’re alright and life is good...</span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">my dear old friend!</span><br />
+			<span class="verse">the sun is rised, it’s time to wake</span><br />
+			<span class="verse">open your eyes,</span><br />
+			<span class="verse">the bird’s singing, flower’s waving</span><br />
+			<span class="verse">those beauty things're waiting for you.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>MAI ĐÌNH CẢM</h2>
+		<p class="stanza">
+			<span class="verse">Trên cao, lấp lánh, ánh trăng vàng </span><br />
+			<span class="verse">Ai mua, anh bán nữa vầng trăng </span><br />
+			<span class="verse">Lầu cao, gác ngọc, Hàn Mạc Tử </span><br />
+			<span class="verse">Trọng Trí là anh lúc xế tàn. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Vầng trăng cắt nữa, thôi li tán</span><br />
+			<span class="verse">Một mãnh tình riêng, hỡi Mai Đình</span><br />
+			<span class="verse">Hồn trăng anh giau buồn, tủi, hận</span><br />
+			<span class="verse">Còn đây trăng bạc, khóc Mai Đình.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>TÌNH QUA</h2>
+		<p class="stanza">
+			<span class="verse">Ánh mắt buồn, anh nhìn qua cửa </span><br />
+			<span class="verse">Tí tách mưa rơi, ngấn lệ sầu </span><br />
+			<span class="verse">Trời xanh, mây trắng còn đâu nữa </span><br />
+			<span class="verse">Một mảnh tình riêng hóa mây nghàn. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Em, anh đôi lứa hòa nhịp đập</span><br />
+			<span class="verse">Có chút ngây thơ buổi hẹn đầu</span><br />
+			<span class="verse">Bởi ánh nắng vàng, em lỗi nhịp</span><br />
+			<span class="verse">Trọn mảnh tình chung hóa mưa ngâu.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>TÌNH ĐƠN PHƯƠNG</h2>
+		<p class="stanza">
+			<span class="verse">Kia đó người buôn cho tôi hỏi </span><br />
+			<span class="verse">Bao nhiêu một gánh tình đơn phương </span><br />
+			<span class="verse">Người buôn không đáp, buồn rười rượi </span><br />
+			<span class="verse">Khẽ lặng nhìn xa mắt lệ đầy. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Chợt cơn mưa qua, hòa dòng lệ</span><br />
+			<span class="verse">Ảo mộng tình chung hóa mây trời</span><br />
+			<span class="verse">Người mua quay gót mà vội vã</span><br />
+			<span class="verse">Để mặc tình kia với mưa buồn.</span><br />
+		</p>
+		</div>
+		
+		<div class="poem">
+		<h2>TỈNH DẬY ĐI EM</h2>
+		<p class="stanza">
+			<span class="verse">Tỉnh dậy đi em, đã năm xuân thì </span><br />
+			<span class="verse">Luyến tiếc làm chi, thêm mòn xác thịt </span><br />
+			<span class="verse">Biết nhau do duyên, phận thì chưa đủ </span><br />
+			<span class="verse">Mở cửa ra, hạnh phúc kia đang chờ. </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Tỉnh dậy đi em, đừng thêm sầu muộn</span><br />
+			<span class="verse">Ánh nắng vàng đang hậm hực ngoài kia</span><br />
+			<span class="verse">Đừng hoài mong cho tương lai ảo diệu</span><br />
+			<span class="verse">Bởi đời người chẳng được mấy xuân hồng.</span><br />
+		</p>
+		</div>
+		
+				<div class="poem">
+		<h2>Một Ngày Như Mọi Ngày</h2>
+		<p class="stanza">
+			<span class="verse">Gió vẫn thổi và mặt trời vẫn đang lên </span><br />
+			<span class="verse">ta vội vàng lau nhanh khuôn mặt vẫn còn đang ướt đẫm </span><br />
+			<span class="verse">một chiếc balo không thể nào cũ hơn </span><br />
+			<span class="verse">ta lại vội vàng lao nhanh đến trạm xe bus... </span><br />
+		</p>
+		<p class="stanza">
+			<span class="verse">Một ngày như bao ngày đã qua</span><br />
+			<span class="verse">ta thẩn thờ rơi từng bước chân vào viện</span><br />
+			<span class="verse">cánh cửa phòng đã mở và duy nhất chỉ mình ta... </span><br />
+		</p>
+		<p class="stanza">	
+			<span class="verse">Một bài thơ với những câu từ </span><br />
+			<span class="verse">và một bóng hình ta cứ hay nhung nhớ </span><br />
+			<span class="verse">giá như có một ngày ta có thể ngồi đối diện nhau</span><br />
+			<span class="verse">chia sẻ cho nhau hết những nổi niềm  </span><br />
+			<span class="verse">để em có thể nói với anh đôi lòng tâm sự </span><br />
+			<span class="verse">rằng em đã yêu anh từ cái nhìn đầu tiên... </span><br />
+		</p>
+		<p class="stanza">	
+			<span class="verse">Thế nhưng rồi lại thôi </span><br />
+			<span class="verse">một ngày như bao ngày đã qua </span><br />
+			<span class="verse">em dặn lòng thôi cứ hãy để tình cảm ấy được chôn vùi nơi sâu thẩm  </span><br />
+			<span class="verse">một ngày như bao ngày đã qua </span><br />
+			<span class="verse">em lại dăn lòng thêm một lần nữa đi... </span><br />
+		</p>
+		<p class="stanza">	
+			<span class="verse">Cuộc đời này vốn chẳng có nhiều niềm vui  </span><br />
+			<span class="verse">nên em sẽ giữ anh như một điều nghọt ngào em có được </span><br />
+			<span class="verse">sợ sẽ đau và chẳng muốn mất anh bên đời </span><br />
+			<span class="verse">nên em sẽ cố giữ lòng cho từng ngày một trôi qua. </span><br />
+		</p>
+	  </div>
+	</div>
+</div>
+
+</body>
+</html>
