@@ -240,7 +240,6 @@ body {
 
 img {
   margin-bottom: -4px;
-  pointer-events: none;
 }
 
 .caption-container {
@@ -516,6 +515,12 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+let allImages = document.querySelector("img");
+allImages.forEach((value)=>{
+    value.oncontextmenu = ()=>{
+        return false;
+    }
+})
 </script>
 
 </body>
