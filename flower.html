@@ -358,7 +358,7 @@ img.hover-shadow {
 	  <div class="modal-content">
 
 		<div class="mySlides">
-		  <img src="photos/flower/IMG_3228_copy.jpg" style="width:100%">
+		  <img src="photos/flower/IMG_3228_copy.jpg" style="width:100%" onContextMenu="return false;">
 		</div>
 		<div class="mySlides">
 		  <img src="photos/flower/IMG_3237_copy.jpg" style="width:100%">
@@ -515,7 +515,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
-$("img").on("contextmenu",function(e){return false;});
 </script>
 
 </body>
